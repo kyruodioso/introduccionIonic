@@ -20,7 +20,7 @@ export class InicioPage implements OnInit {
       redirectTo:'/action-sheet'
     },
     {
-      icon:'logo-apple',
+      icon:'alert-circle-outline',
       name:'Alert',
       redirectTo:'/alert'
     }
