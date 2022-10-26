@@ -8,10 +8,15 @@
         "project": ["tsconfig.json", "e2e/tsconfig.json"],
         "createDefaultProgram": true
       },
+      "plugins": [
+        "@typescript-eslint"
+    ],
       "extends": [
         "plugin:@angular-eslint/ng-cli-compat",
         "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
       ],
       "rules": {
         "@angular-eslint/component-class-suffix": [
@@ -35,8 +40,20 @@
             "prefix": "app",
             "style": "camelCase"
           }
+        ],
+        "@typescript-eslint/strict-boolean-expressions": [
+          2,
+          {
+              "allowString" : false,
+              "allowNumber" : false
+          }
+      ],
+      "no-inferrable-types": [
+          false,
+          "ignore-params"
         ]
-      }
+      },
+      "ignorePatterns":["src/**/*.test.ts","src/frontend/generated/*"]
     },
     {
       "files": ["*.html"],
